@@ -1,8 +1,5 @@
 "use client";
 
-import Lottie from "react-lottie";
-import animationData from "./lotties/hero.json";
-
 import Navbar from "@/components/Navbar";
 import Counters from "@/components/sections/Counters";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -11,24 +8,17 @@ import Footer from "@/components/Footer";
 import About from "@/components/sections/About";
 import HeroBottom from "@/components/sections/HeroBottom";
 
-export default function Home() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+import dynamic from "next/dynamic";
+const Hero = dynamic(() => import("@/components/sections/Hero"), { ssr: false });
 
+
+export default function Home() {
   return (
     <div className="bg-[#efefef] text-[#151515] font-sans">
       <section className="hero lg:px-[100px] md:px-[50px] pb-[30px]">
         <Navbar />
 
-        <div className="flex items-center justify-center">
-          <Lottie options={defaultOptions} height={400} width={400} />
-        </div>
+        <Hero />
       </section>
 
       <HeroBottom />

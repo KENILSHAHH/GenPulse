@@ -1,6 +1,7 @@
 "use client";
+
 import CountUp from "react-countup";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const Counters = () => {
   const sectionRef = useRef(null);
