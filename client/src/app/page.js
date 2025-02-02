@@ -9,12 +9,13 @@ import About from "@/components/sections/About";
 import HeroBottom from "@/components/sections/HeroBottom";
 
 import dynamic from "next/dynamic";
-const Hero = dynamic(() => import("@/components/sections/Hero"), { ssr: false });
-
+const Hero = dynamic(() => import("@/components/sections/Hero"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <div className="bg-[#efefef] text-[#151515] font-sans">
+    <div className="bg-[#efefef] text-[#151515] font-satoshi">
       <section className="hero lg:px-[100px] md:px-[50px] pb-[30px]">
         <Navbar />
 
